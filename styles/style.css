@@ -36,3 +36,47 @@ ul,
 ol {
   list-style: none;
 }
+
+/* ----------------------------------------------------- */
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; 
+  gap: 30px;
+  padding: 133px 30px;
+
+}
+
+.result {
+  min-width: 711px;
+}
+
+.content__details {
+  min-width: 399px;
+}
+
+.result__video {
+  min-width: 711px;
+  min-height: 386px;
+}
+
+.search-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /*???*/
+}
+
+.content__list {
+  max-height: 298px;
+  overflow: hidden auto;
+}
+
+.content__details {
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  margin-bottom: 26px;
+}
