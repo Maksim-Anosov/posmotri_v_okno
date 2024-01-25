@@ -40,7 +40,6 @@ ol {
 /* ----------------------------------------------------- */
 
 .content {
-  width: 1140px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -49,7 +48,7 @@ ol {
 }
 
 .result {
-  width: 711px;
+  
 }
 
 .content__details {
@@ -60,6 +59,7 @@ ol {
 
 .result__video-container {
   position: relative;
+  inset: 0; /*В предыдущем проекте ревьюер сказал всегда указывать inset*/
   width: 711px;
   height: 386px;
   margin-bottom: 16px;
@@ -79,7 +79,8 @@ ol {
 
 .content__list {
   position: relative;
-  height: 298px;
+  inset: 0;
+  max-height: 298px;
   overflow: hidden auto;
 }
 
@@ -104,8 +105,7 @@ ol {
 }
 
 .content__video-card-description-container {
-  max-width: 188px;
-  width: 100%;
+  width: 184px;
 }
 
 .search-form__fieldset-title {
@@ -150,6 +150,8 @@ ol {
   font-weight: 700;
   line-height: 100%;
   text-transform: uppercase;
+  margin-bottom: 6px;
+
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -180,7 +182,6 @@ fieldset {
 
 .search-form__label {
   display: flex;
-  width: fit-content;
   gap: 5px;
 }
 
@@ -328,5 +329,5 @@ button:focus-visible {
 }
 
 .content__card-link {
-  margin: 4px;
+  margin: 2px;
 }
