@@ -104,7 +104,8 @@ ol {
 }
 
 .content__video-card-description-container {
-  max-width: 188px; /* В задании задать width 100% ??? */
+  max-width: 188px;
+  width: 100%;
 }
 
 .search-form__fieldset-title {
@@ -198,14 +199,17 @@ fieldset {
   appearance: none;
 }
 
-input,
+/* рекомендация задания. зачем?
 span,
-button {
-  cursor: pointer; /*зачем это?*/
+button,
+input {
+  cursor: pointer;
 }
+*/
 
 .search-form__checkbox-list {
   display: flex;
+  gap: 15px;
 }
 
 .search-form__pseudo-checkbox {
@@ -214,10 +218,6 @@ button {
   border: 1px solid #fff;
   position: relative;
   inset: 0;
-}
-
-.search-form__label-text {
-  margin-right: 15px;
 }
 
 .search-form__fieldset-title {
@@ -242,6 +242,7 @@ button {
   height: 34px;
 }
 
+/*часть кнопки прячется под скролом. Убирать скрол? Уменьшать кнопку? Размеры кнопки из макета*/
 .more-button {
   width: 399px;
   height: 34px;
@@ -263,8 +264,9 @@ button {
   outline: none;
 }
 
-.search-form__label:has(.search-form__textfield:focus-visible) {
+.search-form__label:has(input:focus-visible) {
   outline: 1px solid #fff;
+  outline-offset: 1px;
 }
 
 input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
@@ -274,4 +276,57 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
   background-color: #fff;
   position: absolute;
   inset: 1px;
+}
+
+.search-form__label:hover {
+  text-decoration: underline;
+}
+
+.search-form__label:has(.search-form__textfield) {
+  text-decoration: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:hover {
+  text-decoration: underline;
+}
+
+button:active {
+  background-color: #545050;
+}
+
+button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: -3px;
+}
+
+.content__card-link {
+  display: block;
+}
+
+.content__card-link_current {
+  background-color: #545050;
+}
+
+.content__video-card:active {
+  background-color: #545050;
+}
+
+.content__video-card:hover {
+  text-decoration: underline;
+}
+
+.content__video-card:focus {
+  outline: none;
+}
+
+.content__video-card:focus-visible {
+  outline: 1px solid #fff;
+}
+
+.content__card-link {
+  margin: 4px;
 }
