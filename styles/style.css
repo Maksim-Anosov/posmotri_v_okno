@@ -16,6 +16,9 @@ html {
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 h1,
@@ -41,16 +44,16 @@ ol {
 
 .content {
   display: flex;
-  justify-content: center;
   align-items: flex-end;
   gap: 30px;
-  margin: 133px 30px;
 }
 
 .content__details {
-  max-width: 399px;
-  width: 100%;
-  height: 100%;
+  min-width: 399px;
+  min-height: 535px;
+
+  /*width: 100%;
+  height: 100%; */
 }
 
 .result__video-container {
@@ -65,6 +68,7 @@ ol {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .search-form {
@@ -77,6 +81,7 @@ ol {
   position: relative;
   inset: 0;
   max-height: 298px;
+  max-width: 399px;
   overflow: hidden auto;
 }
 
@@ -94,10 +99,11 @@ ol {
   align-items: flex-start;
 }
 
-.content__video-card-thumbnail {
+.content__video-card-thumbnail { /*Возможно я не правильно Вас понял, но у меня в макете именно такие размеры. Ссылку на макет закинул в ридми.*/
   width: 194px;
   height: 103px;
   object-fit: cover;
+  object-position: center;
 }
 
 .content__video-card-description-container {
@@ -106,7 +112,7 @@ ol {
 
 .search-form__fieldset-title {
   color: #fff;
-  font-family: "Fira Sans Condensed";
+  font-family: "Fira Sans Condensed", Arial, sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -115,7 +121,7 @@ ol {
 
 .title {
   color: #fff;
-  font-family: Oswald;
+  font-family: "Oswald", Arial, sans-serif;
   font-size: 75px;
   font-style: normal;
   font-weight: 700;
@@ -125,7 +131,7 @@ ol {
 
 .content__accent {
   color: #545050;
-  font-family: Oswald;
+  font-family: "Oswald", Arial, sans-serif;
   font-size: 75px;
   font-style: normal;
   font-weight: 700;
@@ -134,13 +140,15 @@ ol {
 }
 
 .content__card-link {
+  display: block;
   text-decoration: none;
   color: #fff;
+  margin: 2px;
 }
 
 .content__video-card-title {
   color: #fff;
-  font-family: Oswald;
+  font-family: "Oswald", Arial, sans-serif;
   font-size: 30px;
   font-style: normal;
   font-weight: 700;
@@ -155,7 +163,7 @@ ol {
 
 .content__video-card-description {
   color: #fff;
-  font-family: "Fira Sans Condensed";
+  font-family: "Fira Sans Condensed", Arial, sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -187,8 +195,8 @@ fieldset {
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
   min-width: 225px;
-  color: rgba(255, 255, 255, 0.7);
-  font-family: "Fira Sans Condensed";
+  color: #fff;
+  font-family: "Fira Sans Condensed", Arial, sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -196,13 +204,10 @@ fieldset {
   appearance: none;
 }
 
-/* рекомендация задания. зачем?
 span,
-button,
-input {
+button {
   cursor: pointer;
 }
-*/
 
 .search-form__checkbox-list {
   display: flex;
@@ -224,28 +229,21 @@ input {
   border: 1px solid #fff;
   color: #fff;
   text-align: center;
-  font-family: "Fira Sans Condensed";
+  font-family: "Fira Sans Condensed", Arial, sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  min-height: 34px;
 }
 
 .search-form__submit-button {
   align-self: flex-end;
-  width: 194px;
-  height: 34px;
+  min-width: 194px;
 }
 
-/*часть кнопки прячется под скролом. Убирать скрол? Уменьшать кнопку? Размеры кнопки из макета*/
 .more-button {
-  width: 399px;
-  height: 34px;
-  
-  /*display: block;
   width: 100%;
-  height: 100%;
-  padding: 5px 5px; */
 }
 
 /*
@@ -280,7 +278,7 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
 }
 */
 
-input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
+.search-form__checkbox[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
   content: "";
   display: block;
   background-color: #fff;
@@ -314,8 +312,12 @@ button:focus-visible {
   outline-offset: -3px;
 }
 
-.content__card-link {
-  display: block;
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
 }
 
 .content__card-link_current {
@@ -336,8 +338,4 @@ button:focus-visible {
 
 .content__video-card:focus-visible {
   outline: 1px solid #fff;
-}
-
-.content__card-link {
-  margin: 2px;
 }
